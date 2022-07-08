@@ -4,10 +4,19 @@ const inputBtn = document.getElementById("input-btn")
 const Ul = document.getElementById("ulEl")
 let listItems = ""
 
+localStorage.setItem("myLeads", "www.example.com")
+
+// HINTS:
+// localStorage.setItem(key, value)
+// localStorage.getItem(key)
+// localStorage.clear()
+// PS: both key and value need to be strings
+
 inputBtn.addEventListener("click", function() {
     myLeads.push(inputEl.value);
     
     inputEl.value = ""
+    localStorage.setItem("myLeads", JSON.stringify(myLeads))
     renderLeads()
 })
 function    renderLeads(){
